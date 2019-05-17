@@ -18,4 +18,14 @@ server.get('/games', async (req, res) => {
     }   
 });
 
+server.post("/games", async (req, res) => {
+    const body = req.body;
+    if (body.title && body.genre && body.releaseYear) {
+      const games= await Games.add(body);
+      res.status(201).json(games);
+    } else {
+      res.status(400).json({ error: "please provide game title, genre, and releaseYear" });
+    }
+});
+
 module.exports = server;
