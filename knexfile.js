@@ -8,6 +8,12 @@ module.exports = {
       filename: './data/games.db3'
     },
     useNullAsDefault: true,
+    migrations: {
+      directory: './data/migrations',
+    },
+    seeds: {
+      directory: './data/seeds',
+    },
   },
   testing: {
     client: 'sqlite3',
@@ -15,5 +21,11 @@ module.exports = {
       filename: './data/test.db3',
     },
     useNullAsDefault: true,
+    migrations: {
+      directory: './data/migrations',
+    },
+    seeds: {
+      directory: './data/seeds',
+    },
   },
 };
